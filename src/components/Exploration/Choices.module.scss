@@ -1,0 +1,54 @@
+@import '../../styles/shared.scss';
+
+.Choices {
+  padding-left: px(20);
+
+  > .choiceTransition {
+    > .choice {
+      padding: 0 px(5);
+      font-size: px(20);
+    }
+
+    > .choice:hover {
+      color: red;
+    }
+  }
+
+  > .enter {
+    opacity: 0.01;
+  }
+
+  > .enterActive {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+
+  > .leave {
+    opacity: 1;
+  }
+
+  > .leaveActive {
+    opacity: 0.01;
+    transition: opacity 500ms ease-in;
+    display: none;
+  }
+}
+
+.enter {
+  opacity: 0.01;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.leave {
+  opacity: 1;
+}
+
+.leaveActive {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+  display: none;
+}

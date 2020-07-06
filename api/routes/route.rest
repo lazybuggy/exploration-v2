@@ -1,0 +1,38 @@
+
+POST http://localhost:3000/api/users/
+content-type: application/json
+
+{
+  "firstName": "greatest",
+  "lastName": "hash",
+  "username": "lasthash",
+  "password": "12345",
+  "savedPoint": 3
+}
+
+###
+PUT http://localhost:3000/api/users/besti
+content-type: application/json
+
+{
+  "savedPoint": "5d88d9441c9d4400003c6bd0"
+}
+
+###
+GET http://localhost:3000/api/users
+
+###
+GET http://localhost:3000/api/users/moousername
+
+###
+POST http://localhost:3000/api/users/lasthash
+content-type: application/json
+
+{
+  "password": "12345"
+}
+###
+GET http://localhost:3000/api/scenarios/5d88d9091c9d4400003c6bce
+
+###
+GET http://localhost:3000/api/choices/5d88d9091c9d4400003c6bce

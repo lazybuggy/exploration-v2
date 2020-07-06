@@ -1,0 +1,37 @@
+@import '../../styles/shared.scss';
+
+.Scenario {
+  height: 100%;
+  display: flex;
+
+  > .background_wrapper {
+    width: 80%;
+    height: 100%;
+    position: relative;
+
+    > .background {
+      height: 450px;
+      height: 100%;
+    }
+
+    > .scenarioText {
+      position: absolute;
+      background: white;
+      opacity: 0.5;
+      display: flex;
+      flex-direction: column;
+      top: 30%;
+      transform: translate(0, -50%);
+      margin: 0 px(50);
+    }
+  }
+
+  > .choices_wrapper {
+    width: 20%;
+    min-width: 300px;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+  }
+}

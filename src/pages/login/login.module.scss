@@ -1,0 +1,12 @@
+@import '../../styles/shared.scss';
+
+.Landing {
+  height: 100%;
+
+  > .Wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

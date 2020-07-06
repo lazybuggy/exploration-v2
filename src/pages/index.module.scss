@@ -1,8 +1,10 @@
 @import '../styles/shared.scss';
 
 .Landing {
+  height: 100%;
   > .hero {
     width: 100%;
+    height: 100%;
     color: #333;
 
     > .title {
