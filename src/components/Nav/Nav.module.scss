@@ -15,6 +15,13 @@
     max-width: px(1440);
     margin: 0 auto;
 
+    > .HomeWrapper {
+      > .Home {
+        width: 50px;
+        height: auto;
+      }
+    }
+
     > ul {
       flex-grow: 1;
       @include flex-center-vert;
@@ -40,6 +47,10 @@
         img {
           @include box(px(25));
         }
+      }
+
+      a:hover, button:hover {
+        color: #c50;
       }
     }
   }

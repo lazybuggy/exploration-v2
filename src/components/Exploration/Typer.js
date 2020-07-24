@@ -2,32 +2,29 @@ import React, { useState, useEffect } from 'react';
 
 const Typer = (props) => {
   const [index, setIndex] = useState(0);
-  // const bo = false;
-  // console.log("hi");
+  const [forward, goForward] = useState(true);
+
+  useEffect(() => {
+    setIndex(0);
+    goForward(true);
+  }, [props.text]);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      if (props.children.length > index) {
+      if (props.text.length > index && forward) {
         setIndex(i => i + 1);
+      } else if (index >= 0) {
+        setIndex(i => i - 1);
+        goForward(false);
       } else {
         window.clearInterval(timer);
+        goForward(true);
       }
     }, props.speed);
     return () => window.clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index, props])
-  return <div>{props.children.substring(0, index)}</div>;
-  // console.log("heelloo");
-  // return <div>{props.children}</div>;
+  return <div>{props.text.substring(0, index)}</div>;
 };
-
-// const Typero = ({ speed = 100, children }) => {
-//   const [idx, setidx] = React.useState(0);
-//   React.useEffect(() => {
-//     const timer = window.setInterval(() => setidx(v => v + 1), speed);
-//     return () => window.clearInterval(timer);
-//   })
-
-//   return <div>{children.substr(0, idx)}</div>;
-// };
 
 export default Typer;

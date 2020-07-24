@@ -64,7 +64,10 @@ function Nav(props) {
         savedPoint: props.scenarioId,
       })
     }).then(async (res) => {
-      alert("Progress Successfully saved")
+      alert("Progress Successfully saved");
+      const user = await res.json();
+      dispatch(setUserState(user));
+      localStorage.setItem('user_token', JSON.stringify(user));
     });
   };
 
@@ -85,13 +88,14 @@ function Nav(props) {
   return (
     <nav className={classnames(styles.Nav)}>
       <div className={styles.wrapper}>
+        <a href="/" className={styles.HomeWrapper}><img className={styles.Home} src="/assets/images/home.png" /></a>
         <ul className={styles.links}>
           <li>
             {props.user
               ? <div className="navContent">
-                <h2>Signed in as {props.user.firstName}</h2>
-                <Link href="/"><a onClick={signOut}>Sign Out</a></Link>
+                <h2>Signed in as {props.user.username}</h2>
                 <button onClick={saveProgress}>Save Progress</button>
+                <Link href="/"><a onClick={signOut}>Sign Out</a></Link>
               </div>
               : <div className="navContent">
                 <Link href="/login"><a>Log In</a></Link>

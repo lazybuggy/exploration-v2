@@ -4,21 +4,26 @@
   height: 100%;
 
   > .Signup {
-    background: url(https://wallpapercave.com/wp/wp4002174.jpg);
+    background: url(https://i.pinimg.com/originals/c4/88/2b/c4882b34f81aa9fe4a54c7035b470b6a.jpg);
     height: 100%;
     background-size: cover;
     justify-content: center;
     display: flex;
+    flex-direction: column;
     width: 100%;
+    opacity: 0;
 
     > .TextWrapper {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      color: white;
+      color: $white;
+      width: 40%;
+      margin: 0 px(20) px(10) auto;
 
       > .Header {
-        margin-bottom: px(50);
+        margin-bottom: px(5);
+        text-align: left;
       }
     }
 
@@ -28,6 +33,7 @@
       flex-direction: column;
       justify-content: center;
       margin-right: px(20);
+      margin-left: auto;
 
       > .Form {
         display: flex;
@@ -35,12 +41,33 @@
         text-align: left;
 
         > label {
-          color: white;
+          color: $white;
           font-size: px(16);
         }
 
         > .Input {
           margin-bottom: px(15);
+          height: px(30);
+          background: black;
+          opacity: 0.4;
+          border: px(1) solid darkolivegreen;
+          color: #c50;
+        }
+
+        > .Button {
+          background: #1b1d15;
+          color: $white;
+          height: 60px;
+          width: 200px;
+          align-self: center;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: opacity 377ms ease-in-out;
+        }
+
+        > .Button:hover {
+          opacity: 0.8;
         }
       }
     }

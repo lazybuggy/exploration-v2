@@ -86,19 +86,11 @@ function App({ Component, pageProps }) {
 }
 
 App.getInitialProps = async ({ Component, ctx }) => {
-  // var user;
-  console.log("meeeeeeppp", ctx, Component);
   let pageProps = {}
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx)
   }
   return { pageProps }
-  // if (query && query.user) {
-  //   user = JSON.parse(query.user);
-  // } else {
-  //   user = null;
-  // }
-  // return { user };
 }
 
 export default App;
